@@ -1,0 +1,7 @@
+:root{
+    --primary-color: #2e8957;
+}
+.navbar-active-item{
+    color:#2e8957;
+    font-weight: bold;
+}

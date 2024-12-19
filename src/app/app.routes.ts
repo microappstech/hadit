@@ -6,5 +6,6 @@ import { HaditesComponent } from '../Pages/hadites/hadites.component';
 export const routes: Routes = [
     {path : "", component:HomeComponent},
     { path:"idea", component:ContactComponent},
-    { path:"hadites", component:HaditesComponent}
+    { path:"hadites", component:HaditesComponent},
+    { path:"contact", component:ContactComponent},
 ];

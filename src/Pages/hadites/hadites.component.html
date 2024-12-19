@@ -1,9 +1,9 @@
 <!-- component -->
 <div class="relative isolate sm:pt-32" dir="rtl">
 <app-serach-hadit></app-serach-hadit>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         @for (item of items; track $index) {
-            <figure class="rounded-2xl my-2 bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
+            <figure class=" cursor-pointer sm:cursor-default rounded-2xl my-2 bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
                 <blockquote class="p-6 text-lg  leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
                   <p>“مَثَلُ المُؤْمِنِينَ في تَوادِّهِمْ، وتَراحُمِهِمْ، وتَعاطُفِهِمْ مَثَلُ الجَسَدِ إذا اشْتَكَى منه عُضْوٌ تَداعَى له سائِرُ الجَسَدِ بالسَّهَرِ والْحُمَّى”</p>
                 </blockquote>
@@ -11,9 +11,14 @@
                   <!-- <img class="h-10 w-10 flex-none rounded-full bg-gray-50" src="https://insidetheperimeter.ca/wp-content/uploads/2015/11/Albert_einstein_by_zuzahin-d5pcbug-WikiCommons.jpg" alt=""> -->
                   <div class="flex justify-between w-full">
                     <div class="font-semibold">محمد صلى الله عليه وسلم </div>
-                    
                   </div>
-                  <span>:lovr</span>
+                  <span class="hidden sm:block">
+                    <a href="#">
+                      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15.141 6 5.518 4.95a1.05 1.05 0 0 1 0 1.549l-5.612 5.088m-6.154-3.214v1.615a.95.95 0 0 0 1.525.845l5.108-4.251a1.1 1.1 0 0 0 0-1.646l-5.108-4.251a.95.95 0 0 0-1.525.846v1.7c-3.312 0-6 2.979-6 6.654v1.329a.7.7 0 0 0 1.344.353 5.174 5.174 0 0 1 4.652-3.191l.004-.003Z"/>
+                      </svg>
+                    </a>                    
+                  </span>
                 </figcaption>
               </figure>
         }
