@@ -1,0 +1,5 @@
+a.disabled , a.disabled .category {
+    pointer-events: none;
+    cursor: default;
+    background-color: rgb(169, 169, 169);
+  }
