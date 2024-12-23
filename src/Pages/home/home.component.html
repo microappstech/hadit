@@ -4,14 +4,14 @@
 
         <div class="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-4">
           @for (item of categories; track $index) {
-            <a href="/hadites?ctg={{item.id}}" [attr.disabled]="item.hadits.length==0?true:''"  class="{{item.hadits.length==0?'disabled ':''}}relative group block">
+            <a href="/hadites?ctg={{item.id}}"  class=" relative group block border border-1 border-gray-200">
                 <div class="category relative m-2 group transition hover:z-[1] hover:shadow-2xl lg:hidden xl:block">
                     <div class="relative p-8 space-y-8 border-dashed rounded-lg transition duration-300 group-hover:bg-white group-hover:border group-hover:scale-90">
                         <!-- <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/metal.png" class="w-10" width="512" height="512" alt="burger illustration"> -->
                         
                         <div class="space-y-2">
                             <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">{{item.name}}</h5>
-                            <p class="text-sm text-gray-600">عدد الأحاديت : {{item.hadits.length}}</p>
+                            <!-- <p class="text-sm text-gray-600">عدد الأحاديت : {{item.hadits.length}}</p> -->
                             <!-- <p class="text-sm text-gray-600">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p> -->
                         </div>
                         <a  class="text-blue-600 flex justify-between items-center group-hover:text-yellow-600">

@@ -14,11 +14,15 @@ export class HaditServiceService {
 
   }
   getCategories(): Observable<any>{
-    var result = this.http.get(this.apiURL+"Categories-hadites");
+    var result = this.http.get(`${this.apiURL}categories`);
     return result;
   }
   getHaditesByCategory(id: any): Observable<any>{
-    var result = this.http.get(this.apiURL+"Hadites-by-category/"+id);
+    var result = this.http.get(`${this.apiURL}Hadites-by-category/${id}`);
+    return result;
+  }
+  searchHadites(search: any): Observable<any>{
+    var result = this.http.get(`${this.apiURL}search?s=${search}`);
     return result;
   }
 }

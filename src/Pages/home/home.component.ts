@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   {
     this.haditService.getCategories().subscribe((data: any)=>{
       this.categories = data.data;
-      console.log(this.categories);
     });
   }
   
