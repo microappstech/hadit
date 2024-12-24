@@ -18,7 +18,7 @@ export class NavbarComponent {
   }
   isActive(link:string) : boolean
   {
-    console.log(link," = ",this.activeRoute==link)
-      return this.activeRoute==link;
+    let Activeroute =this.activeRoute.split("?")[0];
+    return Activeroute==link;
   }
 }
