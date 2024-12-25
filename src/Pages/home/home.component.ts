@@ -17,13 +17,17 @@ export class HomeComponent implements OnInit {
   constructor(private haditService: HaditServiceService) { }
   ngOnInit(): void {
     this.fetchCates();
+    console.log(this.categories);
   }
   
   fetchCates()
   {
     this.haditService.getCategories().subscribe((data: any)=>{
       this.categories = data.data;
+    this.categories.unshift({id:null,name:"كل الأحاديث"});
+      
     });
+    
   }
   
 }

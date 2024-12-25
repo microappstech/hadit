@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HaditServiceService } from '../../Services/hadit-service.service';
 import { Hadit } from '../../interfaces/Hadite.model';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { catchError } from 'rxjs';
 
 
 @Component({
@@ -27,17 +28,12 @@ export class HaditesComponent implements OnInit {
     this.route.queryParamMap.subscribe(paramMap => {
       const value = paramMap.get('ctg');
       this.CategoryId = value;
+      console.log(this.CategoryId);
       this.getHadites();
     });  
     
     this.searchControl.valueChanges.subscribe((value) => {
-      console.log(value);
-      // this.isLoading = true;
-      // this.haditeseService.searchHadites(value)
-      // .subscribe((data: any)=>{
-      //   this.Hadites = data.data;
-      //   this.isLoading = false;
-      // });
+      
       this.searchHadit(value);
     });
   }
@@ -52,10 +48,24 @@ export class HaditesComponent implements OnInit {
     });
   }
   getHadites(){
-    this.haditeseService.getHaditesByCategory(this.CategoryId).subscribe((data: any)=>{
-      this.Hadites = data.data;
-      console.log(this.Hadites);
-    });
+    if(this.CategoryId==null){
+      this.haditeseService.getAllHadites()
+      .pipe(
+        catchError(error=>{
+          console.log(error);
+          return error;
+        })
+      )
+      .subscribe((data: any)=>{
+        this.Hadites = data.data;
+        console.log(data);
+      })
+    }else{
+      this.haditeseService.getHaditesByCategory(this.CategoryId).subscribe((data: any)=>{
+        this.Hadites = data.data;
+        console.log(this.Hadites);
+      });
+    }
   }
   async shareHadit(hadit: Hadit){
     const shareData = {
