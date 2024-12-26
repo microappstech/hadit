@@ -12,12 +12,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  items = Array.from({length : 10},(_,i)=>i+1);
   categories: any = [];
   constructor(private haditService: HaditServiceService) { }
   ngOnInit(): void {
     this.fetchCates();
-    console.log(this.categories);
+    // console.log(this.categories);
   }
   
   fetchCates()
